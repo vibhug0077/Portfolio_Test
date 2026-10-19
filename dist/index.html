@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vibhu Gautam — AI deployment, data products and technical delivery leadership across enterprise, research and education.">
+  <meta name="theme-color" content="#101010">
+  <title>Vibhu Gautam — AI Deployment & Data Delivery</title>
+  <style>
+    :root {
+      --ink: #101010;
+      --paper: #f6f3ed;
+      --card: #fffdf8;
+      --muted: #68645d;
+      --line: #d8d2c6;
+      --orange: #ff5b35;
+      --orange-dark: #c83d20;
+      --blue: #dce9ff;
+      --yellow: #f4df77;
+      --green: #d9e8ce;
+      --shadow: 0 18px 55px rgba(16,16,16,.08);
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--orange-dark); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .skip { position: absolute; left: 16px; top: -100px; padding: 10px 14px; background: var(--ink); color: white; z-index: 20; }
+    .skip:focus { top: 12px; }
+    .shell { max-width: 1240px; margin: 0 auto; padding: 0 38px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.04em; }
+    .brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 11px; letter-spacing: 0; }
+    .nav { display: flex; gap: 25px; color: var(--muted); font-size: 13px; }
+    .nav a:hover { color: var(--ink); }
+    .status { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font: 11px var(--mono); letter-spacing: .02em; }
+    .status i { width: 7px; height: 7px; border-radius: 50%; background: #5a9c50; box-shadow: 0 0 0 4px #d9ecd3; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(330px, .9fr); gap: 72px; align-items: center; padding: 88px 0 92px; }
+    .kicker { color: var(--orange-dark); font: 11px var(--mono); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 800px; margin: 18px 0 25px; font-size: clamp(52px, 7.2vw, 92px); line-height: .94; letter-spacing: -.075em; font-weight: 760; }
+    h1 em { color: var(--orange); font-style: normal; }
+    .hero-copy { max-width: 640px; color: var(--muted); font-size: 19px; line-height: 1.6; }
+    .hero-copy strong { color: var(--ink); font-weight: 650; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+    .button { display: inline-flex; align-items: center; gap: 18px; min-height: 46px; padding: 12px 17px; border: 1px solid var(--ink); font-size: 13px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+    .button:hover { color: var(--ink); transform: translateY(-2px); text-decoration: none; }
+    .button.primary { background: var(--ink); color: var(--paper); }
+    .button.primary:hover { background: var(--orange); border-color: var(--orange); color: white; }
+    .button.light { background: var(--card); }
+    .micro-note { margin: 20px 0 0; color: var(--muted); font: 11px/1.5 var(--mono); }
+    .brief { position: relative; min-height: 465px; padding: 28px; background: var(--ink); color: var(--paper); box-shadow: var(--shadow); overflow: hidden; }
+    .brief:before { content: ""; position: absolute; width: 240px; height: 240px; border-radius: 50%; background: var(--orange); opacity: .93; right: -100px; top: -80px; }
+    .brief:after { content: ""; position: absolute; width: 300px; height: 300px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; right: -135px; top: -110px; }
+    .brief .eyebrow { position: relative; z-index: 1; color: #c8c3b9; font: 10px var(--mono); letter-spacing: .11em; text-transform: uppercase; }
+    .brief-title { position: relative; z-index: 1; max-width: 320px; margin: 76px 0 38px; font-size: 31px; line-height: 1.04; letter-spacing: -.05em; }
+    .brief-title span { color: var(--yellow); }
+    .flow { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 28px; }
+    .flow span { display: flex; flex-direction: column; gap: 9px; min-height: 64px; padding: 10px 8px; border-top: 2px solid var(--orange); color: #c8c3b9; font: 10px var(--mono); }
+    .flow b { color: var(--paper); font: 12px var(--sans); }
+    .brief-footer { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding-top: 19px; border-top: 1px solid #3b3b3b; color: #c8c3b9; font-size: 12px; }
+    .brief-footer strong { display: block; margin-bottom: 3px; color: var(--paper); font-size: 13px; }
+    .section { border-top: 1px solid var(--line); padding: 74px 0 82px; }
+    .section-header { display: flex; justify-content: space-between; gap: 30px; align-items: start; margin-bottom: 38px; }
+    .section-no { color: var(--orange-dark); font: 11px var(--mono); letter-spacing: .08em; }
+    h2 { max-width: 700px; margin: 12px 0 0; font-size: clamp(35px, 4.3vw, 58px); line-height: 1; letter-spacing: -.065em; }
+    .section-intro { max-width: 370px; margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+    .fit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .fit-card { min-height: 218px; padding: 22px; background: var(--card); border: 1px solid var(--line); }
+    .fit-card:nth-child(2) { background: var(--blue); }
+    .fit-card:nth-child(3) { background: var(--yellow); }
+    .fit-card:nth-child(4) { background: var(--green); }
+    .fit-card .number { color: var(--muted); font: 11px var(--mono); }
+    .fit-card h3 { margin: 59px 0 9px; font-size: 18px; letter-spacing: -.03em; }
+    .fit-card p { margin: 0; color: #57534c; font-size: 13px; line-height: 1.5; }
+    .operating { display: grid; grid-template-columns: .8fr 1.2fr; gap: 44px; padding: 29px; background: var(--card); border: 1px solid var(--line); }
+    .operating h3 { margin: 0 0 12px; font-size: 25px; letter-spacing: -.05em; }
+    .operating p { color: var(--muted); font-size: 14px; }
+    .artifact-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 19px; }
+    .artifact { display: inline-flex; padding: 8px 10px; border: 1px solid var(--line); color: var(--muted); font: 10px var(--mono); }
+    .stages { display: grid; grid-template-columns: repeat(5, 1fr); align-items: stretch; }
+    .stage { position: relative; min-height: 136px; padding: 16px 12px; border-left: 1px solid var(--line); }
+    .stage:first-child { border-left: 0; }
+    .stage:after { content: "→"; position: absolute; top: 17px; right: -9px; color: var(--orange); font-weight: 800; }
+    .stage:last-child:after { content: ""; }
+    .stage b { display: block; margin-bottom: 36px; font-size: 12px; }
+    .stage small { color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .experience { display: grid; grid-template-columns: 250px 1fr; gap: 48px; }
+    .side-copy { color: var(--muted); font-size: 14px; }
+    .side-copy strong { display: block; margin: 27px 0 4px; color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .role { display: grid; grid-template-columns: 120px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--line); }
+    .role:first-child { padding-top: 0; border-top: 0; }
+    .date { color: var(--muted); font: 11px/1.6 var(--mono); }
+    .role h3 { margin: 0 0 4px; font-size: 18px; letter-spacing: -.03em; }
+    .role .org { margin-bottom: 9px; color: var(--orange-dark); font-size: 12px; }
+    .role p { max-width: 670px; margin: 0; color: var(--muted); font-size: 14px; }
+    .project-band { margin: 0 -38px; padding: 74px 38px 82px; background: var(--ink); color: var(--paper); }
+    .project-band .section-header { border-color: #383838; }
+    .project-band .section-intro { color: #bdb8ad; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .project-card { display: flex; flex-direction: column; min-height: 310px; padding: 21px; border: 1px solid #454545; background: #191919; transition: transform .2s ease, border-color .2s ease; }
+    .project-card:hover { border-color: var(--orange); transform: translateY(-4px); text-decoration: none; }
+    .project-card .repo { color: var(--yellow); font: 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+    .project-card h3 { margin: 52px 0 9px; font-size: 22px; letter-spacing: -.045em; }
+    .project-card p { margin: 0; color: #bdb8ad; font-size: 13px; }
+    .project-card .project-link { display: inline-flex; gap: 9px; align-items: center; margin-top: auto; padding-top: 22px; color: white; font-size: 12px; font-weight: 700; }
+    .project-card .project-link span { color: var(--orange); font-size: 17px; }
+    .project-foot { display: flex; justify-content: space-between; gap: 18px; margin-top: 17px; color: #aaa59b; font: 10px var(--mono); }
+    .project-foot a { color: var(--yellow); }
+    .evidence { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .evidence-card { padding: 24px; border: 1px solid var(--line); background: var(--card); }
+    .evidence-card .quote-mark { color: var(--orange); font-size: 42px; line-height: .7; }
+    .evidence-card h3 { margin: 24px 0 9px; font-size: 17px; letter-spacing: -.03em; }
+    .evidence-card p { margin: 0; color: var(--muted); font-size: 13px; }
+    .education { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .education-card { padding: 20px; border-top: 2px solid var(--ink); }
+    .education-card strong { display: block; margin-bottom: 6px; font-size: 14px; }
+    .education-card span { color: var(--muted); font-size: 12px; }
+    .contact { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: end; padding: 92px 0 86px; }
+    .contact h2 { max-width: 650px; font-size: clamp(40px, 5.2vw, 68px); }
+    .contact p { max-width: 500px; color: var(--muted); font-size: 16px; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .contact-links a { border-bottom: 1px solid var(--ink); padding-bottom: 4px; font-size: 14px; font-weight: 700; }
+    .footer { display: flex; justify-content: space-between; gap: 20px; padding: 20px 0 28px; border-top: 1px solid var(--line); color: var(--muted); font: 10px/1.5 var(--mono); }
+    @media (max-width: 920px) {
+      .hero { gap: 40px; grid-template-columns: 1fr; }
+      .brief { max-width: 650px; }
+      .fit-grid { grid-template-columns: repeat(2, 1fr); }
+      .experience { grid-template-columns: 1fr; gap: 22px; }
+      .side-copy { max-width: 620px; }
+      .side-copy strong { display: inline-block; margin: 10px 25px 4px 0; }
+      .project-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 650px) {
+      .shell { padding: 0 20px; }
+      .topbar { align-items: flex-start; }
+      .nav { gap: 12px; flex-wrap: wrap; justify-content: flex-end; max-width: 180px; font-size: 11px; }
+      .status { display: none; }
+      .hero { padding: 58px 0 65px; }
+      h1 { font-size: clamp(52px, 16vw, 75px); }
+      .hero-copy { font-size: 17px; }
+      .brief { min-height: auto; padding: 22px; }
+      .brief-title { margin-top: 66px; font-size: 26px; }
+      .flow { gap: 3px; }
+      .flow span { padding: 8px 5px; font-size: 8px; }
+      .flow b { font-size: 10px; }
+      .section { padding: 58px 0 65px; }
+      .section-header { display: block; }
+      .section-intro { margin-top: 17px; }
+      .fit-grid, .project-grid, .evidence, .education { grid-template-columns: 1fr; }
+      .fit-card { min-height: 175px; }
+      .fit-card h3 { margin-top: 37px; }
+      .operating { grid-template-columns: 1fr; gap: 22px; padding: 21px; }
+      .stages { grid-template-columns: 1fr; }
+      .stage { min-height: auto; padding: 13px 0 13px 15px; border-left: 0; border-top: 1px solid var(--line); }
+      .stage:first-child { border-top: 0; }
+      .stage:after { content: "↓"; top: auto; right: auto; left: 2px; bottom: -10px; z-index: 1; }
+      .stage b { margin-bottom: 3px; }
+      .project-band { margin: 0 -20px; padding: 58px 20px 65px; }
+      .project-foot, .contact, .footer { display: block; }
+      .project-foot a { display: inline-block; margin-top: 9px; }
+      .role { grid-template-columns: 1fr; gap: 5px; }
+      .contact-links { margin-top: 29px; }
+      .footer span { display: block; margin-top: 9px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button, .project-card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Vibhu Gautam home"><span class="brand-mark">VG</span> Vibhu Gautam</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#fit">Role fit</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="status"><i aria-hidden="true"></i> AI & data delivery</div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <div class="kicker">Deployment leadership · Applied AI · Technical delivery</div>
+          <h1 id="page-title">Make complex systems <em>land.</em></h1>
+          <p class="hero-copy"><strong>I translate business outcomes into technical delivery plans</strong> and connect the people, data and systems needed to move from an ambiguous problem to a useful, adopted product.</p>
+          <div class="actions">
+            <a class="button primary" href="#projects">Explore the work <span aria-hidden="true">↗</span></a>
+            <a class="button light" href="assets/Vibhu_Gautam_CV.pdf" download="Vibhu_Gautam_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
+            <a class="button light" href="https://github.com/vibhug0077" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="micro-note">Tailored for Deployment Lead (DL), FDE — Tokyo · Independent portfolio · No OpenAI affiliation</p>
+        </div>
+        <aside class="brief" aria-label="Deployment brief">
+          <div class="eyebrow">Role alignment / deployment brief</div>
+          <div class="brief-title">From <span>customer workflow</span> to durable system.</div>
+          <div class="flow" aria-label="Delivery flow">
+            <span><b>01</b>Map</span>
+            <span><b>02</b>Plan</span>
+            <span><b>03</b>Ship</span>
+            <span><b>04</b>Adopt</span>
+            <span><b>05</b>Learn</span>
+          </div>
+          <div class="brief-footer">
+            <div><strong>Delivery lens</strong>Sequence dependencies, protect the critical path.</div>
+            <div><strong>Field lens</strong>Turn outcomes and signals into reusable patterns.</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="fit" aria-labelledby="fit-title">
+        <div class="section-header">
+          <div><div class="section-no">01 / WHY THIS ROLE</div><h2 id="fit-title">A translator with technical depth.</h2></div>
+          <p class="section-intro">A portfolio built around the core work of a deployment lead: understand the workflow, make the plan legible, ship the system, and measure whether it changed the work.</p>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card"><div class="number">01</div><h3>Customer immersion</h3><p>Start with the operating context: goals, constraints, stakeholders, data reality and what adoption needs to look like.</p></article>
+          <article class="fit-card"><div class="number">02</div><h3>Execution at pace</h3><p>Break ambiguous work into milestones, acceptance criteria and decisions that keep interdependent teams moving.</p></article>
+          <article class="fit-card"><div class="number">03</div><h3>AI & data fluency</h3><p>Connect Python, SQL, cloud analytics, Spark, APIs, MLOps and model assurance to real decision workflows.</p></article>
+          <article class="fit-card"><div class="number">04</div><h3>Reusable leverage</h3><p>Codify the pattern, the evaluation logic and the learning so one deployment can improve the next one.</p></article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="operating-title">
+        <div class="section-header">
+          <div><div class="section-no">02 / HOW I WORK</div><h2 id="operating-title">A delivery operating system.</h2></div>
+          <p class="section-intro">The artefacts are simple on purpose: they make trade-offs visible, create shared ownership and keep value connected to the build.</p>
+        </div>
+        <div class="operating">
+          <div>
+            <h3>Keep the critical path visible.</h3>
+            <p>Whether the work is enterprise analytics, manufacturing intelligence or an applied-AI learning product, I move between system-level understanding and execution-level detail.</p>
+            <div class="artifact-list" aria-label="Delivery artefacts">
+              <span class="artifact">Outcome hypothesis</span>
+              <span class="artifact">Dependency map</span>
+              <span class="artifact">Acceptance criteria</span>
+              <span class="artifact">Adoption plan</span>
+              <span class="artifact">Reusable pattern</span>
+            </div>
+          </div>
+          <div class="stages" aria-label="Five-stage delivery model">
+            <div class="stage"><b>Map</b><small>Workflow<br>Success criteria</small></div>
+            <div class="stage"><b>Sequence</b><small>Milestones<br>Dependencies</small></div>
+            <div class="stage"><b>Deploy</b><small>Prototype → MVP<br>Production readiness</small></div>
+            <div class="stage"><b>Adopt</b><small>Onboarding<br>Change support</small></div>
+            <div class="stage"><b>Learn</b><small>Baseline / KPI<br>Pattern extraction</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="section-header">
+          <div><div class="section-no">03 / EXPERIENCE</div><h2 id="experience-title">The contexts behind the work.</h2></div>
+          <p class="section-intro">Enterprise delivery, research, manufacturing analytics, consulting and technical education — connected by a bias toward useful systems.</p>
+        </div>
+        <div class="experience">
+          <aside class="side-copy">
+            <p>12+ years across analytics delivery, management consulting, manufacturing and technical enablement.</p>
+            <strong>Education</strong>
+            MSc Computer Science<br>University of Southampton
+            <strong>Research</strong>
+            Data science and uncertainty<br>University of York
+            <strong>Japan connection</strong>
+            Manufacturing analytics<br>Micron Technology, Hiroshima
+          </aside>
+          <div>
+            <article class="role"><div class="date">2024 — present</div><div><h3>Applied AI & technical enablement</h3><div class="org">Professor of Practice · UPES, Dehradun</div><p>Applied curricula and project mentoring in data architecture, Snowflake, Big Data and MLOps. Creator of the public People Analytics Lab.</p></div></article>
+            <article class="role"><div class="date">2021 — 2024</div><div><h3>Global data products & analytics delivery</h3><div class="org">Innovation Lead / Data Scientist · Nestlé, UK & India</div><p>Workforce intelligence, Azure analytics platforms and reusable decision products, delivered with business, HR, data and technology stakeholders.</p></div></article>
+            <article class="role"><div class="date">2019 — 2021</div><div><h3>Uncertainty & AI assurance</h3><div class="org">Marie Curie Early Stage Researcher · University of York</div><p>Bayesian methods, predictive confidence and safety-critical decision systems within an international research network.</p></div></article>
+            <article class="role"><div class="date">2017 — 2018</div><div><h3>Manufacturing analytics in Japan</h3><div class="org">Data Scientist · Micron Technology, Hiroshima</div><p>Predictive fault detection and yield analysis with Python, SQL and Spark/PySpark, connecting equipment data to engineering decisions.</p></div></article>
+            <article class="role"><div class="date">2011 — 2016</div><div><h3>Consulting, benchmarking & automation</h3><div class="org">BCG · McKinsey & Company · Brochet</div><p>Organization diagnostics, operating models and standardized analytical delivery, built on an early foundation in business-process automation.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-band" id="projects" aria-labelledby="projects-title">
+        <div class="section-header">
+          <div><div class="section-no">04 / SELECTED PROJECTS</div><h2 id="projects-title">Proof through working artefacts.</h2></div>
+          <p class="section-intro">Public repositories and live demonstrations that show how I structure technical ideas for other people to use.</p>
+        </div>
+        <div class="project-grid">
+          <a class="project-card" href="https://github.com/vibhug0077/Big_Data_Search_Security_L" target="_blank" rel="noopener noreferrer">
+            <div class="repo">GitHub / Python</div>
+            <h3>Big Data Search & Security</h3>
+            <p>A public code-and-course repository focused on search, security and the practical architecture around data-intensive systems.</p>
+            <div class="project-link">Open repository <span aria-hidden="true">↗</span></div>
+          </a>
+          <a class="project-card" href="https://github.com/vibhug0077/Cloud_Computing_Book" target="_blank" rel="noopener noreferrer">
+            <div class="repo">GitHub / Open learning</div>
+            <h3>Cloud Computing Book</h3>
+            <p>A structured public learning resource with fundamentals, question banks and material designed to make technical systems teachable.</p>
+            <div class="project-link">Open repository <span aria-hidden="true">↗</span></div>
+          </a>
+          <a class="project-card" href="https://vibhug0077.github.io/people-analytics-intelligence-lab/" target="_blank" rel="noopener noreferrer">
+            <div class="repo">Live lab / Synthetic data</div>
+            <h3>People Analytics Lab</h3>
+            <p>Interactive demonstrations of diagnostics, causal methods, workforce scenarios and a governed reference architecture.</p>
+            <div class="project-link">Explore live lab <span aria-hidden="true">↗</span></div>
+          </a>
+        </div>
+        <div class="project-foot">
+          <span>Demo outcomes are illustrative; the live lab uses synthetic data.</span>
+          <a href="https://github.com/vibhug0077" target="_blank" rel="noopener noreferrer">View all public repositories ↗</a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="evidence-title">
+        <div class="section-header">
+          <div><div class="section-no">05 / FIELD SIGNALS</div><h2 id="evidence-title">What carries from one deployment to the next.</h2></div>
+          <p class="section-intro">These are the durable habits I bring into ambiguous technical work.</p>
+        </div>
+        <div class="evidence">
+          <article class="evidence-card"><div class="quote-mark" aria-hidden="true">“</div><h3>Make the decision legible.</h3><p>Technical trade-offs only create leverage when business and engineering partners can act on them.</p></article>
+          <article class="evidence-card"><div class="quote-mark" aria-hidden="true">“</div><h3>Measure the change.</h3><p>Set a baseline, define the value hypothesis and check whether the system improved the workflow it entered.</p></article>
+          <article class="evidence-card"><div class="quote-mark" aria-hidden="true">“</div><h3>Package the learning.</h3><p>Reusable evaluation, architecture and operating patterns turn one hard engagement into team-level leverage.</p></article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="education-title">
+        <div class="section-header">
+          <div><div class="section-no">06 / FOUNDATIONS</div><h2 id="education-title">Technical fluency with a human centre.</h2></div>
+          <p class="section-intro">The work sits at the intersection of systems, evidence and the people who need to trust the result.</p>
+        </div>
+        <div class="education">
+          <div class="education-card"><strong>MSc Computer Science</strong><span>University of Southampton</span></div>
+          <div class="education-card"><strong>Data Science Certificate</strong><span>University of Oxford</span></div>
+          <div class="education-card"><strong>BTech Electronics & Communication</strong><span>Chitkara University</span></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <div class="kicker">Start a conversation</div>
+          <h2 id="contact-title">Let’s build something people can use.</h2>
+          <p>Open to conversations about AI deployment, data products, technical delivery and customer-facing systems work.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:vibhu.gautam7@gmail.com">vibhu.gautam7@gmail.com ↗</a>
+          <a href="https://www.linkedin.com/in/vibhugautam7" target="_blank" rel="noopener noreferrer">LinkedIn / vibhu-gautam7 ↗</a>
+          <a href="https://github.com/vibhug0077" target="_blank" rel="noopener noreferrer">GitHub / vibhug0077 ↗</a>
+          <a href="https://openai.com/careers/deployment-lead-(dl)-fde-tokyo-tokyo-japan/" target="_blank" rel="noopener noreferrer">View target role ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Vibhu Gautam</span>
+      <span>Experience and project descriptions are based on supplied profile materials and public links.</span>
+    </footer>
+  </div>
+</body>
+</html>
